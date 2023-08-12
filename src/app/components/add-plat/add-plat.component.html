@@ -1,0 +1,61 @@
+<section class="section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5">
+                <div class="section_tittle">
+                    <h2>Add Dishes</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="regervation_part_iner">
+                    <form [formGroup]="addPlatForm">
+                        <div class="form-row">
+                            <div class="form-group col-md-10">
+                                <input type="text" formControlName='name' class="form-control" id="inputEmail4" placeholder="Name">
+                            </div>
+                            <div *ngIf="addPlatForm.controls['name'].invalid &&
+                            (addPlatForm.controls['name'].touched || addPlatForm.controls['name'].dirty)">
+                               <div *ngIf="addPlatForm.controls['name'].errors.required">
+                                   Name is required
+                               </div>
+                               <div *ngIf="addPlatForm.controls['name'].errors.minlength">
+                                   <!-- //minlength miniscule -->
+                                   Name >3
+                               </div>
+                           </div>
+                            <div class="form-group col-md-10">
+                                <input type="text" formControlName='description' class="form-control" id="inputPassword4"
+                                    placeholder="Description">
+                            </div>
+                            <div *ngIf="addPlatForm.controls['description'].invalid &&
+                            addPlatForm.controls['description'].touched ">
+                               <div *ngIf="addPlatForm.controls['description'].errors.required">
+                                  Description is required
+                               </div>
+                               
+                           </div>
+                            <div class="form-group col-md-10">
+                                <input type="number"  formControlName='price' class="form-control" id="inputPassword4"
+                                    placeholder="Price">
+                            </div>
+                            <div *ngIf="addPlatForm.controls['price'].invalid &&
+                            addPlatForm.controls['price'].touched ">
+                               <div *ngIf="addPlatForm.controls['price'].errors.required">
+                                   Price is required
+                               </div>
+                               
+                           </div>
+                           
+                        </div>
+
+                        <div class="regerv_btn">
+                            <a href="#" class="btn_4" (click)='addPlat()'>Add</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,39 @@
+<section class="food_menu gray_bg section_padding">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-lg-10">
+                <div class="nav nav-tabs food_menu_nav" id="myTab" role="tablist">
+                    <a class="active" id="Special-tab" data-toggle="tab" href="#Special" role="tab"
+                        aria-controls="Special" aria-selected="false">Chefs <img src="assets/img/icon/play.svg"
+                            alt="play"></a>
+                    <a id="Breakfast-tab" data-toggle="tab" href="#Breakfast" role="tab" aria-controls="Breakfast"
+                        aria-selected="false">Plats <img src="assets/img/icon/play.svg" alt="play"></a>
+                    <a id="Launch-tab" data-toggle="tab" href="#Launch" role="tab" aria-controls="Launch"
+                        aria-selected="false">Users <img src="assets/img/icon/play.svg" alt="play"></a>
+
+                </div>
+            </div>
+            <div class="col-lg-10">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active single-member" id="Special" role="tabpanel"
+                        aria-labelledby="Special-tab">
+                        <app-chefs-table></app-chefs-table>
+
+                    </div>
+                    <div class="tab-pane fade single-member" id="Breakfast" role="tabpanel"
+                        aria-labelledby="Breakfast-tab">
+
+                        <app-plats-table></app-plats-table>
+
+
+
+                    </div>
+                    <div class="tab-pane fade single-member" id="Launch" role="tabpanel" aria-labelledby="Launch-tab">
+                        <app-users-table></app-users-table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

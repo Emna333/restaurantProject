@@ -1,0 +1,29 @@
+<div class="widget-next-match container">
+    <table class="table custom-table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>firstName</th>
+                <th>lasttName</th>
+                <th>email</th>
+                <th>password</th>
+                <th>action</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.id}}</td>
+                <td>{{user.firstName}}</td>
+                <td>{{user.lastName}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.password}}</td>
+                <td>
+                    <button class="btn btn-success"(click)='goToDisplay(user.id)'>Display</button>
+                    <button class="btn btn-warning">Edit</button>
+                    <button class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

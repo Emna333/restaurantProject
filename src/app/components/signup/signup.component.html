@@ -1,0 +1,81 @@
+<section class="section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5">
+                <div class="section_tittle">
+                    <h2>Signup</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="regervation_part_iner">
+                    <form [formGroup]="signupForm">
+                        <div class="form-row" >
+                            <div class="form-group col-md-10">
+                                <input type="text" formControlName='firstName' class="form-control" id="inputEmail4" placeholder="First Name">
+                            </div>
+                            <div *ngIf="signupForm.controls['firstName'].invalid &&
+                     (signupForm.controls['firstName'].touched || signupForm.controls['firstName'].dirty)">
+                        <div *ngIf="signupForm.controls['firstName'].errors.required">
+                            FN is required
+                        </div>
+                        <div *ngIf="signupForm.controls['firstName'].errors.minlength">
+                            <!-- //minlength miniscule -->
+                            FN >3
+                        </div>
+                    </div>
+                            <div class="form-group col-md-10">
+                                <input type="text" formControlName='lastName' class="form-control" id="inputPassword4"
+                                    placeholder="Last Name">
+                            </div>
+                            <div *ngIf="signupForm.controls['lastName'].invalid &&
+                            (signupForm.controls['lastName'].touched || signupForm.controls['lastName'].dirty)">
+                                <div *ngIf="signupForm.controls['lastName'].errors.required">
+                                    LN is required
+                                </div>
+                                <div *ngIf="signupForm.controls['lastName'].errors.minlength">
+                                    <!-- //minlength miniscule -->
+                                    LN >5
+                                </div>
+                            </div>
+                            <div class="form-group col-md-10">
+                                <input type="email" formControlName='email' class="form-control" id="inputPassword4"
+                                    placeholder="Email">
+                            </div>
+                            <div *ngIf="signupForm.controls['email'].invalid &&
+                            (signupForm.controls['email'].touched || signupForm.controls['email'].dirty)">
+                                <div *ngIf="signupForm.controls['email'].errors.required">
+                                    email is required
+                                </div>
+                                <div *ngIf="signupForm.controls['email'].errors.email">
+                                    email format is invalid
+                                </div>
+                            </div>
+                            <div class="form-group col-md-10">
+                                <input type="password" formControlName='pwd' class="form-control" id="inputPassword4"
+                                    placeholder="Password">
+                            </div>
+                            <div *ngIf="signupForm.controls['pwd'].invalid &&
+                            (signupForm.controls['pwd'].touched || signupForm.controls['pwd'].pattern)">
+                                <div *ngIf="signupForm.controls['pwd'].errors.required">
+                                    pwd is required
+                                </div>
+                                <div *ngIf="signupForm.controls['pwd'].errors.pattern">
+                                    pwd should contain at least 1 number , 1 special charac, 1uppercase ,minimum 5 caracters and
+                                    max 10
+                                </div>
+        
+                            </div>
+                           
+                        </div>
+
+                        <div class="regerv_btn">
+                            <button  class="btn_4" (click)='signup()' >Signup</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

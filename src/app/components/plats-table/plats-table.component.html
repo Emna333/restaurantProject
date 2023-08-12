@@ -1,0 +1,27 @@
+<div class="container">
+    <table class="table custom-table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Description</th>     
+          <th>Actions</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let plat of plats">
+          <td>{{plat.id}}</td>
+          <td><strong>{{plat.name}}</strong></td>
+          <td [ngStyle]="{'color':priceColor(plat.price)}">{{plat.price}}</td>
+          <td>{{plat.description}}</td>
+          <td>
+            <button class="btn btn-success"(click)='goToDisplay(plat.id)'>Display</button>
+            <button class="btn btn-warning">Edit</button>
+            <button class="btn btn-danger">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
